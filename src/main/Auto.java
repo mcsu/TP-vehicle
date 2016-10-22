@@ -1,6 +1,6 @@
 package main;
 
-public class Auto extends Véhicule{
+public class Auto extends Véhicule{
 
 	private String model;
 	public Auto(int id, float price, int stoke, float distance,String model) {
