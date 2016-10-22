@@ -15,7 +15,7 @@ public class Moto extends Véhicule{
 		return cylindre;
 	}
 	/**
-	 * @param ml the ml to set
+	 * @param cylindre the cylindre to set
 	 */
 	public void setMl(int cylindre) {
 		this.cylindre = cylindre;
