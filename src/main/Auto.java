@@ -1,20 +1,30 @@
 package main;
 
-public class Auto extends Vehicule{
+public class Auto extends Vehicule implements Comparable<Auto>{
 
 	private String model;
-	public Auto(int id, float price, int stoke, float distance,String model) {
-		super(id, price, stoke, distance);
+	private boolean isLuxe;
+	public boolean isLuxe() {
+		return isLuxe;
+	}
+	
+	public Auto(String marque,float price, int stoke, float distance,String model,boolean isLuxe) {
+		super(marque,price, stoke, distance);
 		// TODO Auto-generated constructor stub
 		this.model=model;
-	
+		this.isLuxe = isLuxe; 
+		
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Auto [model=" + model + ", toString()=" + super.toString() + "]";
+		String result="";
+		result+=model;
+		if(isLuxe)
+			result+="NB";
+		return result;
 	}
 	/**
 	 * @return the model
@@ -29,6 +39,26 @@ public class Auto extends Vehicule{
 		this.model = model;
 	}
 
+	public void setLuxe(boolean isLuxe) {
+		this.isLuxe = isLuxe;
+	}
 
+	public boolean getLuxe(boolean isLuxe) {
+		return isLuxe;
+	}
+
+	@Override
+	public int compareTo(Auto o) {
+		Auto other = (Auto) o;  
+		  
+        // 先按照name属性排序  
+        if (this.isLuxe)  
+            return 1;  
+        if (!this.isLuxe)  
+            return -1;  
+  
+        
+        return 0;  
+	}
 
 }

@@ -2,10 +2,12 @@ package main;
 
 public class Vehicule {
 
-	int id;
-	float price;
-	int stoke;
-	float distance;
+	private int Numero;
+	private static int id;
+	private float price;
+	private int stoke;
+	private float distance;
+	private String marque;
 	/**
 	 * @return the id
 	 */
@@ -60,12 +62,20 @@ public class Vehicule {
 	 * @param stoke
 	 * @param distance
 	 */
-	public Vehicule(int id, float price, int stoke, float distance) {
+	public Vehicule(String marque,float price, int stoke, float distance) {
 		super();
-		this.id = id;
+		Vehicule.id=Vehicule.id+1;
+		Numero=id;
+		this.marque = marque;
 		this.price = price;
 		this.stoke = stoke;
 		this.distance = distance;
+	}
+	public String getMarque() {
+		return marque;
+	}
+	public void setMarque(String marque) {
+		this.marque = marque;
 	}
 	
 	

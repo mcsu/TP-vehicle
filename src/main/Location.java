@@ -5,7 +5,8 @@ public class Location {
 	String numero;
 	Date debut;
 	Date fin;
-	Vehicule véhicule;
+	Exemplaire exemplaire;
+	Emprunteur emprunteur;
 //	PERSONE
 	
 	/**
@@ -57,10 +58,11 @@ public class Location {
 	 * @param debut
 	 * @param fin
 	 */
-	public Location(String numero, Date debut, Date fin) {
+	public Location(Date debut, Date fin,Emprunteur emprunteur,Exemplaire veh) {
 		super();
-		this.numero = numero;
 		this.debut = debut;
 		this.fin = fin;
+		this.emprunteur = emprunteur;
+		this.exemplaire = veh;
 	}
 }

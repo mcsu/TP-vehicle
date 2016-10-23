@@ -1,33 +1,60 @@
 package main;
 
-public class Emprunteur {
+import java.util.Set;
+import java.util.TreeSet;
 
-	static int id;
+
+
+
+public class Emprunteur implements Comparable<Emprunteur>{
+
+	private int id;
+	private static int Numero;
+	Facture facture;
 	String nom;
 	String prenom;
 	Adresse adresse;
+	Devis devis;
 	
-	public void louer(){
-		
+
+	public Facture getFacture() {
+		return facture;
 	}
-	
-	public void ramener(){
+	public void setFacture(Facture facture) {
+		this.facture = facture;
+	}
+	public void louer(Auto vehicule){
 		
+		
+
+	}
+	public void louer(Moto vehicule){
+		
+
+	}
+
+	@Override
+	public String toString() {
+		String result = "" ;
+		result+="±àºÅ";
+		result+=id;
+		result+="ĞÕÃû";
+		result+=prenom;
+		result+=nom;
+		result+="\t";
+		result+="×¡Ö·";
+		result+=adresse;
+
+		return result;
+	}
+	public void ramener(){
+
 	}
 
 	/**
 	 * @return the id
 	 */
-	public static int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public static void setId(int id) {
-		Emprunteur.id = id;
-	}
+	
 
 	/**
 	 * @return the nom
@@ -78,12 +105,21 @@ public class Emprunteur {
 	 */
 	public Emprunteur(String nom, String prenom, int numero,String rue,int CP,String ville) {
 		super();
+		Emprunteur.Numero=Emprunteur.Numero+1;
+		id=Numero;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = new Adresse(numero,rue,CP,ville);
 	}
-
-
+	@Override
+	public int compareTo(Emprunteur o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	
+
+
+
+
 }

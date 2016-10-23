@@ -1,12 +1,14 @@
 package main;
 
-public class Moto extends Vehicule{
+import main.ManageVeh;
+public class Moto extends Vehicule implements Comparable<Moto>{
 
 	private int cylindre;
-	public Moto(int id, float price, int stoke, float distance,int cylindre) {
-		super(id, price, stoke, distance);
+	public Moto(String marque,float price, int stoke, float distance,int cylindre) {
+		super(marque,price, stoke, distance);
 		// TODO Auto-generated constructor stub
 		this.cylindre=cylindre;
+		ManageVeh.ts.add(this);
 	}
 	/**
 	 * @return the ml
@@ -26,6 +28,11 @@ public class Moto extends Vehicule{
 	@Override
 	public String toString() {
 		return "Auto [cylindre=" + cylindre + ", toString()=" + super.toString() + "]";
+	}
+	@Override
+	public int compareTo(Moto o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
