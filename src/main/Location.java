@@ -5,7 +5,7 @@ public class Location {
 	String numero;
 	Date debut;
 	Date fin;
-	Véhicule véhicule;
+	Vehicule véhicule;
 //	PERSONE
 	
 	/**

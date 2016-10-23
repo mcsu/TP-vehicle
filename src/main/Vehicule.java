@@ -1,6 +1,6 @@
 package main;
 
-public class Véhicule {
+public class Vehicule {
 
 	int id;
 	float price;
@@ -60,7 +60,7 @@ public class Véhicule {
 	 * @param stoke
 	 * @param distance
 	 */
-	public Véhicule(int id, float price, int stoke, float distance) {
+	public Vehicule(int id, float price, int stoke, float distance) {
 		super();
 		this.id = id;
 		this.price = price;

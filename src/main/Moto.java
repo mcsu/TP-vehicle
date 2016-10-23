@@ -1,6 +1,6 @@
 package main;
 
-public class Moto extends Véhicule{
+public class Moto extends Vehicule{
 
 	private int cylindre;
 	public Moto(int id, float price, int stoke, float distance,int cylindre) {
