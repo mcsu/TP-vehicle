@@ -114,7 +114,9 @@ public class Emprunteur implements Comparable<Emprunteur>{
 	@Override
 	public int compareTo(Emprunteur o) {
 		// TODO Auto-generated method stub
-		return 0;
+		
+			return 1;
+		
 	}
 
 	

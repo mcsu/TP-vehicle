@@ -69,7 +69,7 @@ public class Devis {
 			
 		info+="保险信息\n";
 		info+=safe;
-		info+="\t\t\t\t总计\n";
+		info+="\t\t\t总计\n";
 		info+="\t\t\t\t\t\t";
 		info+=this.calculate();
 	

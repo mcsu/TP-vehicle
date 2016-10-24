@@ -21,6 +21,7 @@ public class Auto extends Vehicule implements Comparable<Auto>{
 	@Override
 	public String toString() {
 		String result="";
+		result+=getMarque();
 		result+=model;
 		if(isLuxe)
 			result+="豪华车";
@@ -63,7 +64,7 @@ public class Auto extends Vehicule implements Comparable<Auto>{
 	 else if (this.getMarque().length()<o.getMarque().length())
             return -1; 
 	 else 
-		return 0;
+		return 1;
 	}
 
 }

@@ -73,6 +73,6 @@ public class Location implements Comparable<Location>{
 	@Override
 	public int compareTo(Location o) {
 		// TODO Auto-generated method stub
-		return 0;
+		return 1;
 	}
 }

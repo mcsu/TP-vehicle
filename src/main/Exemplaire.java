@@ -92,8 +92,7 @@ public class Exemplaire implements Comparable<Exemplaire>{
 	public int compareTo(Exemplaire o) {
 		if (this.getAuto().isLuxe())  
             return 2;
-		else if(this.getMoto()!=null)  
-            return 1;
+		
 		else {
 			return 0;
 		}

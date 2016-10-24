@@ -9,7 +9,7 @@ public class ManageVeh {
 	static Set<Exemplaire> ts = new TreeSet<Exemplaire>(); 
 	public void addVeh(Exemplaire veh){
 		ts.add(veh);
-		System.out.println(ts.size());
+		
 	}
 	
 	public Exemplaire rechercherParMarque(String marque){
@@ -17,6 +17,7 @@ public class ManageVeh {
 		for(Exemplaire but : ts){
 			if(but.getVehicule().getMarque().equals(marque)){
 				result=but;
+				System.out.println(but);
 			}	
 		}
 		return result;	
@@ -27,6 +28,7 @@ public class ManageVeh {
 		for(Exemplaire but : ts){
 			if(but.getVehicule().getDistance()==distance){
 				result=but;
+				System.out.println(but);
 			}	
 		}
 		return result;	
