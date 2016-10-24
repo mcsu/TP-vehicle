@@ -6,25 +6,26 @@ import java.util.TreeSet;
 
 public class ManageVeh {
 
-	static Set<Vehicule> ts = new TreeSet<Vehicule>(); 
-	public void addVeh(Vehicule veh){
+	static Set<Exemplaire> ts = new TreeSet<Exemplaire>(); 
+	public void addVeh(Exemplaire veh){
 		ts.add(veh);
+		System.out.println(ts.size());
 	}
 	
-	public Vehicule rechercherParMarque(String marque){
-		Vehicule result= null;
-		for(Vehicule but : ts){
-			if(but.getMarque().equals(marque)){
+	public Exemplaire rechercherParMarque(String marque){
+		Exemplaire result= null;
+		for(Exemplaire but : ts){
+			if(but.getVehicule().getMarque().equals(marque)){
 				result=but;
 			}	
 		}
 		return result;	
 	}
 	
-	public Vehicule rechercherParDistance(float distance){
-		Vehicule result= null;
-		for(Vehicule but : ts){
-			if(but.getDistance()==distance){
+	public Exemplaire rechercherParDistance(float distance){
+		Exemplaire result= null;
+		for(Exemplaire but : ts){
+			if(but.getVehicule().getDistance()==distance){
 				result=but;
 			}	
 		}
@@ -32,13 +33,31 @@ public class ManageVeh {
 	}
 	
 	public void listParType(){
-		System.out.println("\n");
-		for(Vehicule but : ts){
+		System.out.println("按类型输出\n");
+		for(Exemplaire but : ts){
 			System.out.println(but);
-			
+		}
+	}
+	public void delete(int id){
+		for(Exemplaire but : ts){
+			if(but.getVehicule().getId()==id)
+				ts.remove(but);
 		}
 	}
 	
+	
+//	public void change(int id){
+//		for(Vehicule but : ts){
+//			if(but.getId()==id)
+//				ts.remove(but);
+//			
+//		}
+//	}
+//	
+//	public void generator(){
+//		
+//	}
+//	
 	
 	
 	/*

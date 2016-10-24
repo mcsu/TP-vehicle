@@ -23,7 +23,7 @@ public class Auto extends Vehicule implements Comparable<Auto>{
 		String result="";
 		result+=model;
 		if(isLuxe)
-			result+="NB";
+			result+="豪华车";
 		return result;
 	}
 	/**
@@ -52,13 +52,18 @@ public class Auto extends Vehicule implements Comparable<Auto>{
 		Auto other = (Auto) o;  
 		  
         // 先按照name属性排序  
-        if (this.isLuxe)  
+//        if (this.isLuxe)  
+//            return 1;  
+//        if (!this.isLuxe)  
+//            return -1; 
+////        else
+//        	return 0;  
+		if (this.getMarque().length()>o.getMarque().length())  
             return 1;  
-        if (!this.isLuxe)  
-            return -1;  
-  
-        
-        return 0;  
+	 else if (this.getMarque().length()<o.getMarque().length())
+            return -1; 
+	 else 
+		return 0;
 	}
 
 }

@@ -2,6 +2,7 @@ package main;
 
 public class Vehicule {
 
+
 	private int Numero;
 	private static int id;
 	private float price;

@@ -1,12 +1,14 @@
 package main;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Locations {
 
 	 static Set<Location> ts = new TreeSet<Location>();  
-
 	 public static void add(Location location){
 		ts.add(location);
 	}
@@ -14,11 +16,10 @@ public class Locations {
 	 public Location rechercherParDebut(Date debut){
 		 Location result= null;
 			for(Location but : ts){
-				int a,b;
-				a=(but.getDebut().annee)*10000+(but.getDebut().mois*100)+(but.getDebut().jour);
-				b=(debut.annee)*10000+(debut.mois*100)+(debut.jour);
-				if(a==b){
+				
+				if(but.debut.equals(debut)){
 					result=but;
+					System.out.println("1");
 				}	
 			}
 			return result;	
@@ -48,7 +49,8 @@ public class Locations {
 					System.out.println(but);	
 			}	
 	 }
-	 
+
+	
 	 
 	 
 }

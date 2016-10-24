@@ -33,8 +33,8 @@ public class Emprunteurs {
 		Emprunteur result= null;
 		float total = 0;
 		for(Emprunteur but : ts){
-			for(Facture facture : Facture.factures){
-				total+=facture.prix;
+			for(Facture facture : Factures.factures){
+				total+=facture.getDevis().calculate();
 				if(total==prix)
 					result=but;
 			}

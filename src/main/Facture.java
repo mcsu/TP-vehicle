@@ -1,34 +1,58 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 public class Facture {
 
-	int id;
-	static int Numero;
-	boolean hasSafe;
-	Object veh;
-	Emprunteur emprunteur;
-	Date debut;
-	Date fini;
-	Float prix;
-	int stoke;
-	static List<Facture> factures = new ArrayList<Facture>();
-	public Facture(boolean hasSafe, Object veh, Emprunteur emprunteur, Date debut, Date fini,
-			int stoke,float prix) {
-		super();
-		Facture.Numero=Facture.Numero+1;
-		id=Numero;
-		this.hasSafe = hasSafe;
-		this.veh = veh;
-		this.emprunteur = emprunteur;
-		this.debut = debut;
-		this.fini = fini;
-		this.stoke = stoke;
-		this.prix = prix;
+	private int id;
+	private static int Numero;
+	private Devis devis;
+	private int stoke;
+	public Devis getDevis() {
+		return devis;
 	}
-	
+	public void setDevis(Devis devis) {
+		this.devis = devis;
+	}
+	public int getStoke() {
+		return stoke;
+	}
+	public void setStoke(int stoke) {
+		this.stoke = stoke;
+	}
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		String result="发票信息";
+		result+="编号\n";
+		result+=id;
+		result+="剩余油量";
+		result+=stoke;
+		result+=devis;
+		if(devis.getExemplaire().isAccident())
+			if(devis.getSafe()!=null){
+				result+="车损";
+				float total=500;
+				total+=devis.calculate();
+			}
+			else{
+				result+="车损";
+				float total=(500*devis.getSafe().getInsuranceAmount())/100;
+				total+=devis.calculate();
+			}
+			
+			
+			
+		return result;
+	}
+
 }

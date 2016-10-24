@@ -1,6 +1,10 @@
 package main;
 
-public class Location {
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Location implements Comparable<Location>{
 	
 	String numero;
 	Date debut;
@@ -50,7 +54,8 @@ public class Location {
 	 */
 	@Override
 	public String toString() {
-		return "Location [numero=" + numero + ", debut=" + debut + ", fin=" + fin + ", toString()=" + super.toString()
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");	
+		return "Location [numero=" + numero + ", debut=" + df.format(debut) + ", fin=" + fin + ", toString()=" + super.toString()
 				+ "]";
 	}
 	/**
@@ -64,5 +69,10 @@ public class Location {
 		this.fin = fin;
 		this.emprunteur = emprunteur;
 		this.exemplaire = veh;
+	}
+	@Override
+	public int compareTo(Location o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

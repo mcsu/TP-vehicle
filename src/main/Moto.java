@@ -1,5 +1,7 @@
 package main;
 
+import org.omg.CORBA.StringHolder;
+
 import main.ManageVeh;
 public class Moto extends Vehicule implements Comparable<Moto>{
 
@@ -8,18 +10,16 @@ public class Moto extends Vehicule implements Comparable<Moto>{
 		super(marque,price, stoke, distance);
 		// TODO Auto-generated constructor stub
 		this.cylindre=cylindre;
-		ManageVeh.ts.add(this);
+		
 	}
-	/**
-	 * @return the ml
-	 */
+
 	public int getCylindre() {
 		return cylindre;
 	}
 	/**
 	 * @param cylindre the cylindre to set
 	 */
-	public void setMl(int cylindre) {
+	public void setCylindre(int cylindre) {
 		this.cylindre = cylindre;
 	}
 	/* (non-Javadoc)
@@ -27,12 +27,20 @@ public class Moto extends Vehicule implements Comparable<Moto>{
 	 */
 	@Override
 	public String toString() {
-		return "Auto [cylindre=" + cylindre + ", toString()=" + super.toString() + "]";
+		String result="";
+		result+="气缸";
+		result+=cylindre;
+		return result;
 	}
 	@Override
 	public int compareTo(Moto o) {
 		// TODO Auto-generated method stub
-		return 0;
+		 if (this.getCylindre()>o.getCylindre())  
+	            return 1;  
+		 else if (this.getCylindre()<o.getCylindre())  
+	            return -1; 
+		 else 
+			return 0;
 	}
 
 }
