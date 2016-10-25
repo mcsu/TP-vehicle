@@ -1,6 +1,6 @@
 package main;
 
-import org.omg.CORBA.StringHolder;
+
 
 import main.ManageVeh;
 public class Moto extends Vehicule implements Comparable<Moto>{
@@ -10,6 +10,7 @@ public class Moto extends Vehicule implements Comparable<Moto>{
 		super(marque,price, stoke, distance);
 		// TODO Auto-generated constructor stub
 		this.cylindre=cylindre;
+		this.setType(0);
 		
 	}
 
@@ -28,6 +29,7 @@ public class Moto extends Vehicule implements Comparable<Moto>{
 	@Override
 	public String toString() {
 		String result="";
+		result+=getMarque();
 		result+="气缸";
 		result+=cylindre;
 		return result;

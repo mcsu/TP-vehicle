@@ -1,4 +1,4 @@
-package main;
+package other;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,28 +45,28 @@ public class Facture {
 	@Override
 	public String toString() {
 		
-		String result="·¢Æ±ĞÅÏ¢";
-		result+="\n±àºÅ";
+		String result="å‘ç¥¨ä¿¡æ¯";
+		result+="\nç¼–å·";
 		result+=id;
-		result+="Ê£ÓàÓÍÁ¿";
+		result+="å‰©ä½™æ²¹é‡";
 		result+=stoke;
 		result+=devis;
 		total+=(100-stoke)*7.2;
 		
 		if(devis.getExemplaire().isAccident())
 			if(devis.getSafe()==null){
-				result+="\n³µËğ";
+				result+="\nè½¦æŸ";
 				total+=500;
 				total+=devis.calculate();
 			}
 			else{
-				result+="\n³µËğ";
+				result+="\nè½¦æŸ";
 				total+=(500*(100-devis.getSafe().getInsuranceAmount()))/100;
-				System.out.println("jianmian"+(500*(100-devis.getSafe().getInsuranceAmount()))/100);
+			
 				total+=devis.calculate();
 			}
 			
-		result+="\n\t\t\t×Ü¶î\t";
+		result+="\n\t\t\tæ€»é¢\t";
 		result+=total;
 			
 			

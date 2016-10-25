@@ -9,6 +9,7 @@ public class Vehicule {
 	private int stoke;
 	private float distance;
 	private String marque;
+	private int type;
 	/**
 	 * @return the id
 	 */
@@ -77,6 +78,18 @@ public class Vehicule {
 	}
 	public void setMarque(String marque) {
 		this.marque = marque;
+	}
+	/**
+	 * @return the type
+	 */
+	public int getType() {
+		return type;
+	}
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(int type) {
+		this.type = type;
 	}
 	
 	

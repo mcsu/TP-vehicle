@@ -3,6 +3,9 @@ package main;
 import java.util.Set;
 import java.util.TreeSet;
 
+import other.Devis;
+import other.Facture;
+
 
 
 
@@ -11,6 +14,7 @@ public class Emprunteur implements Comparable<Emprunteur>{
 	private int id;
 	private static int Numero;
 	Facture facture;
+	Factures factures;
 	String nom;
 	String prenom;
 	Adresse adresse;
@@ -36,13 +40,13 @@ public class Emprunteur implements Comparable<Emprunteur>{
 	@Override
 	public String toString() {
 		String result = "" ;
-		result+="���";
+		result+="客户编号";
 		result+=id;
-		result+="����";
+		result+="姓名";
 		result+=prenom;
 		result+=nom;
 		result+="\t";
-		result+="סַ";
+		result+="住址";
 		result+=adresse;
 
 		return result;
@@ -117,6 +121,16 @@ public class Emprunteur implements Comparable<Emprunteur>{
 		
 			return 1;
 		
+	}
+	
+	public void louer(){
+		System.out.println("租车程序\n");
+		System.out.println("当前可用\n");
+//		Utilisation.main(null).m
+//		
+//		
+//		
+//		this.devis = new Devis(safe, veh, this, debut, fini);
 	}
 
 	

@@ -13,8 +13,11 @@ public class Auto extends Vehicule implements Comparable<Auto>{
 		// TODO Auto-generated constructor stub
 		this.model=model;
 		this.isLuxe = isLuxe; 
-		
+		this.setType(1);
+		if(this.isLuxe)
+			this.setType(2);
 	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */

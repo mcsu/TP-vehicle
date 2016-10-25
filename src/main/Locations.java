@@ -8,7 +8,7 @@ import java.util.TreeSet;
 
 public class Locations {
 
-	 static Set<Location> ts = new TreeSet<Location>();  
+	 
 	 public static void add(Location location){
 		ts.add(location);
 	}
@@ -19,7 +19,6 @@ public class Locations {
 				
 				if(but.debut.equals(debut)){
 					result=but;
-					System.out.println("1");
 				}	
 			}
 			return result;	

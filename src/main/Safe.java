@@ -31,12 +31,12 @@ public class Safe {
 	@Override
 	public String toString() {
 		String result="";
-		result+="±£ÏÕĞÅÏ¢";
-		result+="ÏÕÖÖ";
+		result+="\nä¿é™©ä¿¡æ¯\t";
+		result+="é™©ç§ï¼š";
 		result+=name;
-		result+="¼Û¸ñ";
+		result+="ä»·æ ¼ï¼š";
 		result+=prix;
-		result+="±£¶î";
+		result+="é¢åº¦ï¼š";
 		result+=insuranceAmount;
 		result+="%";
 		return result;

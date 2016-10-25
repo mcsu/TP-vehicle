@@ -1,8 +1,12 @@
-package main;
+package other;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import main.Emprunteur;
+import main.Exemplaire;
+import main.Safe;
 
 public class Devis {
 
@@ -29,7 +33,7 @@ public class Devis {
 		this.safe = safe;
 	}
 	public float calculate(){
-		//Æ·ÅÆ-¡·Ã¿ÌìµÄ¼Û¸ñ * ÌìÊı+±£ÏÕ
+		//Æ·ï¿½ï¿½-ï¿½ï¿½Ã¿ï¿½ï¿½Ä¼Û¸ï¿½ * ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½
 		float total = 0;
 		long diff = 0;
 		diff =fini.getTime()-debut.getTime();
@@ -42,16 +46,16 @@ public class Devis {
 	public String toString() {
 		String info = "";
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		info+="Ô¤ËãĞÅÏ¢\n";
-		info+="Ô¤Ëã±àºÅ";
+		info+="é¢„ç®—ä¿¡æ¯\n";
+		info+="ç¼–å·";
 		info+=id;
-		info+="×â³µÈË\n";
+		info+="ç§Ÿè½¦äºº\n";
 		info+=emprunteur;
-		info+="\n¿ªÊ¼Ê±¼ä\n";
+		info+="\nå¼€å§‹æ—¶é—´\n";
 		info+=df.format(debut);
-		info+="\n½áÊøÊ±¼ä\n";
+		info+="\nç»“æŸæ—¶é—´\n";
 		info+=df.format(fini);
-		info+="\n³µĞÍ\n";
+		info+="\nè½¦å‹\n";
 		info+=exemplaire;
 		//o instanceof ClassA
 //		if(exemplaire.getVehicule() instanceof Auto){
@@ -67,9 +71,9 @@ public class Devis {
 //			
 //		}
 			
-		info+="±£ÏÕĞÅÏ¢\n";
+		info+="ä¿é™©ä¿¡æ¯\n";
 		info+=safe;
-		info+="\t\t\t×Ü¼Æ\n";
+		info+="\t\t\tæ€»è®¡\n";
 		info+="\t\t\t\t\t\t";
 		info+=this.calculate();
 	

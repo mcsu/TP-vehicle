@@ -3,6 +3,8 @@ package main;
 import java.util.Set;
 import java.util.TreeSet;
 
+import other.Facture;
+
 public class Emprunteurs {
 
 	static Set<Emprunteur> ts = new TreeSet<Emprunteur>(); 
@@ -25,7 +27,6 @@ public class Emprunteurs {
 		System.out.println("\n");
 		for(Emprunteur but : ts){
 			System.out.println(but);
-			
 		}
 	}
 	
@@ -33,7 +34,7 @@ public class Emprunteurs {
 		Emprunteur result= null;
 		float total = 0;
 		for(Emprunteur but : ts){
-			for(Facture facture : Factures.factures){
+			for(Facture facture : Factures.ts){
 				total+=facture.getDevis().calculate();
 				if(total==prix)
 					result=but;
