@@ -21,7 +21,7 @@ public class Utilisation {
 		Devis devis = new Devis(safe3, c1, a1, df.parse("2016-1-1"), df.parse("2016-2-1"));
 		System.out.println(devis);
 		c1.setAccident(true);
-		Facture f1 = new Facture(devis, 50);
+		Facture f1 = new Facture(devis,50);
 		System.out.println(f1);
 		
 		System.out.println("2- Gestion des Ressources");
@@ -36,7 +36,7 @@ public class Utilisation {
 		Exemplaire c4 = new Exemplaire(b4);
 		Exemplaire c5 = new Exemplaire(b5);
 		Exemplaire c7 = new Exemplaire(b3);
-		ManageVeh mv = new ManageVeh();
+		Flotte mv = new Flotte();
 		mv.addVeh(c1);
 		mv.addVeh(c2);
 		mv.addVeh(c3);
@@ -60,12 +60,8 @@ public class Utilisation {
 		
 		System.out.println("4-Gestion des locations");
 		System.out.println("rechercher par debut");
-		Location l1 = new Location(df.parse("2014-06-03"), df.parse("2015-06-03"), a1, c1);
-		Location l2 = new Location(df.parse("2014-07-03"), df.parse("2015-06-03"), a1, c1);
-		Locations locations = new Locations();
-		locations.add(l1);
-		locations.add(l2);
-		System.out.println(locations.rechercherParDebut(df.parse("2014-07-03")));
+		Location l1 = new Location(df.parse("2014-06-03"), df.parse("2015-06-03"), c1, a1);
+		Location l2 = new Location(df.parse("2014-07-03"), df.parse("2015-06-03"), c1, a1);
 		
 
 		

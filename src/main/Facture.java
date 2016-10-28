@@ -10,7 +10,8 @@ import javax.naming.spi.DirStateFactory.Result;
 
 public class Facture {
 
-	public Facture(Devis devis, int stoke) {
+	
+	public Facture(Devis devis,int stoke) {
 		super();
 		this.devis = devis;
 		this.stoke = stoke;

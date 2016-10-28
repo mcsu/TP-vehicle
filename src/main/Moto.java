@@ -2,9 +2,30 @@ package main;
 
 import org.omg.CORBA.StringHolder;
 
-import main.ManageVeh;
+import main.Flotte;
 public class Moto extends Vehicule implements Comparable<Moto>{
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + cylindre;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Moto other = (Moto) obj;
+		if (cylindre != other.cylindre)
+			return false;
+		return true;
+	}
 	private int cylindre;
 	public Moto(String marque,float price, int stoke, float distance,int cylindre) {
 		super(marque,price, stoke, distance);

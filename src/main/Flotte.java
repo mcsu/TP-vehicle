@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 
-public class ManageVeh {
+public class Flotte {
 
 	static Set<Exemplaire> ts = new TreeSet<Exemplaire>(); 
 	public void addVeh(Exemplaire veh){

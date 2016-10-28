@@ -5,15 +5,15 @@ import java.util.TreeSet;
 
 public class Emprunteurs {
 
-	static Set<Emprunteur> ts = new TreeSet<Emprunteur>(); 
+	static Set<Emprunteur> emprunteurs = new TreeSet<Emprunteur>(); 
 	
 	public void addEmprunteur(Emprunteur emprunteur){
-		ts.add(emprunteur);
+		emprunteurs.add(emprunteur);
 	}
 	
 	public Emprunteur rechercherParNom(String Nom){
 		Emprunteur result= null;
-		for(Emprunteur but : ts){
+		for(Emprunteur but : emprunteurs){
 			if(but.getNom().equals(Nom)){
 				result=but;
 			}	
@@ -23,7 +23,7 @@ public class Emprunteurs {
 	
 	public void list(){
 		System.out.println("\n");
-		for(Emprunteur but : ts){
+		for(Emprunteur but : emprunteurs){
 			System.out.println(but);
 			
 		}
@@ -32,9 +32,9 @@ public class Emprunteurs {
 	public Emprunteur rechercherParMontant(float prix){
 		Emprunteur result= null;
 		float total = 0;
-		for(Emprunteur but : ts){
-			for(Facture facture : Factures.factures){
-				total+=facture.getDevis().calculate();
+		for(Emprunteur but : emprunteurs){
+			for(Facture facture : but.factures.factures){
+				total+=facture.getTotal();
 				if(total==prix)
 					result=but;
 			}

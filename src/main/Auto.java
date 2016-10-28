@@ -50,21 +50,40 @@ public class Auto extends Vehicule implements Comparable<Auto>{
 
 	@Override
 	public int compareTo(Auto o) {
-		Auto other = (Auto) o;  
-		  
-        // 先按照name属性排序  
-//        if (this.isLuxe)  
-//            return 1;  
-//        if (!this.isLuxe)  
-//            return -1; 
-////        else
-//        	return 0;  
-		if (this.getMarque().length()>o.getMarque().length())  
+		if (this.getMarque().equals(o.getMarque()))  
             return 1;  
-	 else if (this.getMarque().length()<o.getMarque().length())
-            return -1; 
-	 else 
-		return 1;
+	 
+		else 
+			return -1;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (isLuxe ? 1231 : 1237);
+		result = prime * result + ((model == null) ? 0 : model.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Auto other = (Auto) obj;
+		if (isLuxe != other.isLuxe)
+			return false;
+		if (model == null) {
+			if (other.model != null)
+				return false;
+		} else if (!model.equals(other.model))
+			return false;
+		return true;
+	}
+	
 
 }
